@@ -1,0 +1,8 @@
+{
+  "ref": "refs/tags/v1.0.0",
+  "ref_type": "tag",
+  "repository": {
+    "name": "hello-ci-cd",
+    "full_name": "your-org/hello-ci-cd"
+  }
+}

@@ -10,19 +10,29 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          
-      - name: Run tests
-        run: pytest
 
-      - name: Simulated Deploy
-        run: echo "Deploying to production server..."
+      - name: Run tests
+        env:
+          APP_ENV: ${{ secrets.APP_ENV }}
+        run: |
+          echo "Running tests in environment: $APP_ENV"
+          pytest
+
+      - name: Deploy
+        env:
+          DEPLOY_API_KEY: ${{ secrets.DEPLOY_API_KEY }}
+          APP_ENV: ${{ secrets.APP_ENV }}
+        run: |
+          echo "Deploying to $APP_ENV..."
+          echo "Authenticating with deploy key: ${DEPLOY_API_KEY:0:4}****"
+          echo "Deploy complete."
