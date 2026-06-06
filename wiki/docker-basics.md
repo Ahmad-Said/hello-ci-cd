@@ -30,18 +30,18 @@ flowchart TD
         OS2[Host OS]
         Docker[Docker Engine]
         
-        subgraph Container A
+        subgraph ContainerA[Container A]
             AppA2[App A\nDependencies]
         end
         
-        subgraph Container B
+        subgraph ContainerB[Container B]
             AppB2[App B\nDependencies]
         end
 
         Server2 --- OS2
         OS2 --- Docker
-        Docker --- Container A
-        Docker --- Container B
+        Docker --- ContainerA
+        Docker --- ContainerB
     end
 ```
 
