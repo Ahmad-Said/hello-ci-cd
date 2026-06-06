@@ -2,6 +2,8 @@
 
 Welcome to the GitHub Actions CI/CD tutorial! This repository serves as a practical guide to understanding and building CI/CD pipelines using GitHub Actions, and how to test them locally using [`act`](https://github.com/nektos/act).
 
+The GitHub repository is hosted at [https://github.com/Ahmad-Said/hello-ci-cd](https://github.com/Ahmad-Said/hello-ci-cd).
+
 ## What is CI/CD?
 
 *   **Continuous Integration (CI):** The practice of automating the integration of code changes from multiple contributors into a single software project. It often involves running automated tests to ensure that the new code doesn't break existing functionality.
